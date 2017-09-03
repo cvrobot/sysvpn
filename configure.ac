@@ -3,9 +3,9 @@
 
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AC_CONFIG_SRCDIR([src/client/sysvpn-cli.c])
+AC_CONFIG_SRCDIR([src])
 AC_CONFIG_HEADERS([config.h])
-
+AM_INIT_AUTOMAKE([foreign])
 # Checks for programs.
 AC_PROG_CC
 
@@ -18,7 +18,7 @@ AC_PROG_CC
 # Checks for library functions.
 
 AC_CONFIG_FILES([Makefile
-                 src/Makefile
+	         src/Makefile
                  src/client/Makefile
                  src/server/Makefile])
 AC_OUTPUT
