@@ -8,6 +8,7 @@ AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign])
 # Checks for programs.
 AC_PROG_CC
+LT_INIT
 
 # Checks for libraries.
 
@@ -21,4 +22,5 @@ AC_CONFIG_FILES([Makefile
 	         src/Makefile
                  src/client/Makefile
                  src/server/Makefile])
+AC_CONFIG_SUBDIRS([libsodium])
 AC_OUTPUT
