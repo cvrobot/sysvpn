@@ -1,6 +1,28 @@
 #include <sodium.h>
 
-int crypto_init
+int crypto_init()
+{
+    sodium_init();
+}
+
+void crypto_gen_randombytes(void * const buf, const size_t size);
+{
+    randombytes_buf(buf, size);
+}
+
+int crypto_set_key(struct *crypto c, const unsigned char *pwd, int plen) {
+    int ret = 0;
+    c->klen = crypto_aead_chacha20poly1305_KEYBYTES;
+    c->key = malloc(c->klen);
+
+    ret = crypto_generichash(c->key, c->klen, pwd, plen, NULL, 0);
+    if(ret){
+        free(c->key);
+    }
+
+    return ret;
+}
+
 int crypto_encryp(unsigned char *c, const unsigned char *m, unsigned long long mlen)
 {
 	char *nonce = c;

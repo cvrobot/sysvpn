@@ -7,17 +7,11 @@ enum state{
     SESSION_CONNECT,
 };
 
-enum request_type{
-    EXG_KEY,
-    LOG_IN,
-    LOG_OUT,
-    
-};
-
 struct session{
     char key[SYSVPN_KEY_LEN];	//save keys
     int cnt;					//exchange key retry count
     enum state st;
+    struct crypto c;
 };
 
 struct config{

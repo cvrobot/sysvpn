@@ -28,3 +28,13 @@ int tun_open(const char *dev) {
   // strcpy(dev, ifr.ifr_name);
   return fd;
 }
+
+int tun_read(int fd, void *buf, int count)
+{
+
+}
+
+int tun_write(int fd, void *buf, int count)
+{
+
+}

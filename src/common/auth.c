@@ -1,4 +1,4 @@
-
+//check data len match (chm + EXG_KEY) + (chm + key len) + CLI key
 int auth_unpack(struct auth *a, unsigned char *data, int len)
 {
 	int i = 0;
