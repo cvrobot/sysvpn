@@ -31,10 +31,10 @@ int tun_open(const char *dev) {
 
 int tun_read(int fd, void *buf, int count)
 {
-
+    return read(fd, buf, count);
 }
 
 int tun_write(int fd, void *buf, int count)
 {
-
+    return write(fd, buf, count);
 }
